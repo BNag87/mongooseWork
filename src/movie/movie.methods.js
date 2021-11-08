@@ -48,17 +48,13 @@ exports.deleteMovies = async () => {
 }
 
 //PROBLEMS START HERE! I think the issue is with passing two variables rather than a single movieObj. Maybe?
-//In my edits over the weekend, I'll try and use that to edit a file.
-//Thanks!
+
 exports.edit = async (titleIn, actorIn) => {
     try {
-        //this gets deletes all records from the database
+        
             
-            // console.log("----→\tEditing movie '"+movieObj.title+"' to have the actor "+movieObj.actor+" as the actor.")
-            const movie = await Movie.updateOne({title: titleIn, actor: actorIn})
-
-            //                 console.log("----→\tMovie "+movieObj.title+" was updated to have the actor "+movieObj.title+".")
-            // console.log("movie was set as: ",movieObj.title)
+            console.log("----→\tEditing movie '"+titleIn+"' to have the actor "+actorIn+" as the actor.")
+            const movie = await Movie.findOneAndUpdate({title : "whatever movie title", movie: "J Cand"})
 
             mongoose.disconnect();
             console.log("----→\tmongoose.disconnect was fired");
