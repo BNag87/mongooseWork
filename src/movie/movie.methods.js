@@ -53,8 +53,8 @@ exports.edit = async (titleIn, actorIn) => {
     try {
         
             
-            console.log("----→\tEditing movie '"+titleIn+"' to have the actor "+actorIn+" as the actor.")
-            const movie = await Movie.findOneAndUpdate({title : "whatever movie title", movie: "J Cand"})
+            console.log("----→\tEditing movie '"+titleIn.title+"' to have the actor "+actorIn.actor+" as the actor.")
+            const movie = await Movie.findOneAndUpdate({title : titleIn}, {actor: actorIn})
 
             mongoose.disconnect();
             console.log("----→\tmongoose.disconnect was fired");

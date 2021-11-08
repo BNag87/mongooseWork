@@ -39,15 +39,19 @@ const app = () => {
 
     else if(process.argv[2] === "edit"){
         try{
-            console.log("arg3 = ", yargs.argv)
+            console.log("=========================\n", "yargs.argv.title = ", yargs.argv.title,"\n")
+            console.log("=========================\n", "yargs.argv.actor = ", yargs.argv.actor,"\n")
             console.log("----→Firing edit...")
 
-            edit({title: yargs.argv.title, actor: yargs.argv.actor})
+            console.log("From the app.js, passing yargs to edit...")
+            edit(yargs.argv.title, yargs.argv.actor)
+            console.log("From the app.js, managed to pass yargs and do the function!")
+            
         } 
         catch (error){
             console.log("Whoops... something shat itself in the 'edit' function in 'app.js': \n\t"+error)
         }
-        console.log(process.argv)
+        
     }
 
     else{
